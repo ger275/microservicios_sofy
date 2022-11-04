@@ -6,7 +6,7 @@ namespace microservicios.Datos
     {
         MySqlConnection con = new MySqlConnection();
 
-        static string servidor = "34.134.205.131";
+        static string servidor = "35.226.190.130";
         static string bd = "sofydb";
         static string ususario = "root";
         static string pass = "seminario_proy_soby_bd_2022";
