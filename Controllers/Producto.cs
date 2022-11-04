@@ -60,5 +60,16 @@ namespace microservicios.Controllers
             return listarProductos;
         }
 
+        // POST api/<Producto>
+        [HttpPost]
+        public void Post([FromBody] PedidoModel pedido)
+        {
+            Console.WriteLine(pedido.fechaHora);
+            conecta = con.conectarBD();
+            MySqlCommand sql = new MySqlCommand("insert into pedido_tmp(email,nombre,fechaHora,id_producto,cantidad) values('"+pedido.email+"','"+pedido.nombre+"','"+pedido.fechaHora.ToString("yyyy-MM-dd HH:mm:ss") +"',"+pedido.id_producto+","+pedido.cantidad+")", conecta);
+            int escribir = sql.ExecuteNonQuery();
+            Console.WriteLine(escribir);
+        }
+
     }
 }
